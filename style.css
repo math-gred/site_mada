@@ -1,0 +1,134 @@
+/* --- Style général --- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 1s ease;
+}
+
+/* --- Page d’accueil --- */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.home .main-photo {
+  width: 640px; /* deux fois plus large */
+  height: 640px; /* deux fois plus haute */
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.6s ease;
+}
+.home .main-photo:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.buttons {
+  margin-top: 40px;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: #ff5e78;
+  padding: 16px 32px;
+  margin: 12px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+  background: #ff5e78;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* --- Albums --- */
+.album {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.album header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.album h1 {
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  font-size: 1.8rem;
+}
+
+.back {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.back:hover {
+  transform: translateX(-3px);
+}
+
+/* --- Galerie 2 images par ligne, très verticales (selfie allongé) --- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* deux colonnes */
+  gap: 15px;
+  padding: 90px 15px 15px; /* espace pour le header fixe */
+}
+
+.gallery img {
+  width: 100%;
+  height: 900px; /* ultra vertical, style selfie très allongé */
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
