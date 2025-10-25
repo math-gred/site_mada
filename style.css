@@ -98,7 +98,7 @@ h2 {
   animation-delay: 1s;
 }
 
-/* 💖 Cœurs, chocolats et musique — plusieurs éléments */
+/* 💖 Cœurs, chocolats et musique */
 .decor-heart1 { top: 80px; left: 60px; width: 60px; animation-delay: 2s; }
 .decor-heart2 { top: 160px; right: 100px; width: 50px; animation-delay: 3s; }
 .decor-heart3 { top: 300px; left: 20%; width: 40px; animation-delay: 4s; }
@@ -137,7 +137,7 @@ h2 {
   margin-bottom: 40px;
 }
 
-/* 🖼️ Galerie de photos — 2 par 2, larges et verticales */
+/* 🖼️ Galerie de photos — 2 par 2 */
 .photo-section .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -159,7 +159,7 @@ h2 {
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* 💞 Décorations dans les albums (plus discrètes) */
+/* 💞 Décorations dans les albums */
 .album-decor {
   position: absolute;
   opacity: 0.7;
@@ -173,9 +173,10 @@ h2 {
 .album-choco1 { bottom: 80px; left: 20%; width: 60px; animation-delay: 3s; }
 .album-music1 { bottom: 200px; right: 10%; width: 70px; animation-delay: 4s; }
 
-/* 🌸 Responsive pour smartphones */
+/* 🌸 Responsive pour tablettes et smartphones */
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; padding: 8px 15px; }
 
   .main-photo {
     width: 340px;
@@ -184,11 +185,18 @@ h2 {
 
   .photo-section .gallery {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .photo-section img {
     width: 90%;
-    height: 500px;
+    height: auto;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
   }
 
   .btn {
@@ -196,7 +204,66 @@ h2 {
     font-size: 1rem;
   }
 
+  /* Décors plus petits et moins opaques */
   .decor, .album-decor {
-    opacity: 0.6;
+    opacity: 0.5;
+    max-width: 50px;
   }
+
+  .decor-martinique, .decor-madagascar {
+    width: 50px;
+  }
+
+  /* Ajustement positions décorations */
+  .decor-heart1 { top: 50px; left: 10px; }
+  .decor-heart2 { top: 120px; right: 10px; }
+  .decor-choco1 { top: 60%; left: 5%; }
+  .decor-music1 { top: 10%; right: 5%; }
+
+  .album-heart1 { top: 30px; left: 5%; }
+  .album-heart2 { top: 200px; right: 10%; }
+  .album-choco1 { bottom: 60px; left: 10%; }
+  .album-music1 { bottom: 150px; right: 5%; }
 }
+
+/* 🌸 Très petits écrans (<480px) */
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; margin-top: 30px; }
+  h2 { font-size: 1.2rem; padding: 6px 12px; margin: 30px 0 15px; }
+
+  .main-photo {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .photo-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-container {
+    gap: 10px;
+  }
+
+  /* Décors très petits et aux coins pour ne pas gêner */
+  .decor, .album-decor {
+    opacity: 0.3;
+    max-width: 40px;
+  }
+
+  .decor-heart1 { top: 20px; left: 5px; }
+  .decor-heart2 { top: 80px; right: 5px; }
+  .decor-choco1 { top: 50%; left: 3%; }
+  .decor-music1 { top: 10%; right: 3%; }
+
+  .album-heart1 { top: 20px; left: 5%; }
+  .album-heart2, .album-choco1, .album-music1 { display: none; }
+  .decor-heart3, .decor-heart4, .decor-choco2, .decor-music2 { display: none; }
+}
+
